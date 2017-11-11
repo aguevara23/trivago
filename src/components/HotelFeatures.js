@@ -10,8 +10,11 @@ class HotelFeatures extends Component {
   constructor(props){
     super(props)
     this.state = {
-      FeatureIsVisible: false
+      FeatureIsVisible: true
     }
+
+
+    this.toggleFeatureState = this.toggleFeatureState.bind(this);
   }
 
   toggleFeatureState() {
@@ -19,11 +22,13 @@ class HotelFeatures extends Component {
     this.setState({FeatureIsVisible: !featureState})
   }
 
+
   render() {
     const { hotel } = this.props;
 
     return (
-      <div className="hotel__feature">
+      <div className={this.state.FeatureIsVisible ? "hotel__feature hotel__feature--revealed" : "hotel__feature hotel__feature--hidden"}>
+        <button onClick={this.toggleFeatureState}>View More</button>
         <div className="hotel__text">
           <div className="hotel__feature__title">Name</div>
           <div className="">{hotel.name}</div>
