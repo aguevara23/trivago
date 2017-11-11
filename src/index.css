@@ -2,4 +2,50 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav {
+  background: rgba(255,0,0,.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+
+
+}
+
+.hotel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 75px;
+
+}
+
+.hotel img {
+  width: 100%;
+
+}
+
+.hotel__text {
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+
+}
+
+.hotels {
+  background: rgba(255, 0, 0, 0.5);
+  height: 100vh;
+}
+
+input {
+  width: 75%;
+  height: 25px;
 }

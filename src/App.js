@@ -1,21 +1,54 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
+import Nav from './components/Nav';
+import Hotels from './components/Hotels';
+import Favorites from './components/Favorites';
+import { connect } from 'react-redux';
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+
+    this.renderComponents = this.renderComponents.bind(this);
+    this.viewFavorites = this.viewFavorites.bind(this);
+    this.viewAllHotels = this.viewAllHotels.bind(this);
+  }
+
+  renderComponents() {
+    const { all } = this.props.state;
+
+    if (this.state.currentView) {
+      return <Favorites />
+    }
+
+    return <Hotels hotels={all} />
+  }
+
+  viewFavorites() {
+    this.setState({currentView: 1})
+  }
+
+  viewAllHotels() {
+    this.setState({currentView: 0})
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Nav viewFavorites={this.viewFavorites} viewAllHotels={this.viewAllHotels}/>
+        {this.renderComponents()}
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state, props){
+  return {
+    state
+  }
+}
+export default connect(mapStateToProps)(App);

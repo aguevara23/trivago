@@ -1,7 +1,8 @@
-import { SET_HOTELS, ADD_HOTELS } from "./constants";
+import { SET_HOTELS, ADD_HOTELS } from "../constants";
 
 const HOTELS = {
     "A": {
+        id: "A",
         name: "Hotel A",
         price: "$100",
         address: {
@@ -52,6 +53,7 @@ const HOTELS = {
     },
 
     "B": {
+        id: "B",
         name: "Hotel B",
         price: "$100",
         address: {
@@ -102,6 +104,7 @@ const HOTELS = {
     },
 
     "C": {
+        id: "C",
         name: "Hotel C",
         price: "$100",
         address: {
@@ -152,6 +155,7 @@ const HOTELS = {
     },
 
     "D": {
+        id: "D",
         name: "Hotel D",
         price: "$100",
         address: {
@@ -202,6 +206,7 @@ const HOTELS = {
     },
 
     "E": {
+        id: "E",
         name: "Hotel E",
         price: "$100",
         address: {
@@ -250,8 +255,9 @@ const HOTELS = {
             }
         ],
     },
-    
+
     "F": {
+        id: "F",
         name: "Hotel F",
         price: "$100",
         address: {
@@ -309,7 +315,7 @@ export default (state = HOTELS, action) => {
 
        case ADD_HOTELS:
         return Object.assign({}, state, action.payload);
- 
+
        default:
           return state;
     }
