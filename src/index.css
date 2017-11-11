@@ -34,10 +34,17 @@ body {
 
 }
 
-.hotel__text {
-  background: rgba(0,0,0,0.5);
-  width: 100%;
-
+.hotel__feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    z-index: 100;
 }
 
 .hotels {
