@@ -28,24 +28,27 @@ class HotelFeatures extends Component {
 
     return (
       <div className={this.state.FeatureIsVisible ? "hotel__feature hotel__feature--revealed" : "hotel__feature hotel__feature--hidden"}>
-        <button onClick={this.toggleFeatureState}>View More</button>
-        <div className="hotel__text">
-          <div className="hotel__feature__title">Name</div>
-          <div className="">{hotel.name}</div>
+        <div className="hotel__features">
+          <div className="hotel__text">
+            <div className="hotel__feature__title">Name</div>
+            <div className="">{hotel.name}</div>
+          </div>
+          <div className="hotel__text">
+            <div className="hotel__feature__title">Price</div>
+            <div className="">{hotel.Price}</div>
+          </div>
+          <div className="hotel__text">
+            <div className="hotel__feature__title">Address</div>
+            <div className="">{hotel.Address}</div>
+          </div>
+          <div className="hotel__text">
+            <div className="hotel__feature__title">Comments</div>
+            <div className="">{hotel.reviews[0].comment}-{hotel.reviews[0].name}</div>
+          </div>
         </div>
-        <div className="hotel__text">
-          <div className="hotel__feature__title">Price</div>
-          <div className="">{hotel.Price}</div>
+        <div className={this.state.FeatureIsVisible ? "feature__arrow hover-glow-icon feature__arrow--flipped" : "feature__arrow hover-glow-icon"} onClick={this.toggleFeatureState}>
+          <img src={downArrow} alt="down arrow button"/>
         </div>
-        <div className="hotel__text">
-          <div className="hotel__feature__title">Address</div>
-          <div className="">{hotel.Address}</div>
-        </div>
-
-
-        <div className="">{hotel.price}</div>
-        <div className="">{hotel.address.street}</div>
-        <div className="">{hotel.reviews[0].comment}-{hotel.reviews[0].name}</div>
       </div>
     );
   }

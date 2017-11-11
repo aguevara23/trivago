@@ -8,7 +8,7 @@ export default (state = HOTELS, action) => {
         return Object.assign({}, action.payload);
 
        case ADD_TO_FAV:
-        return Object.assign({}, state, action.payload);
+        return Object.assign({}, state, {[action.payload.id]: action.payload});
 
        default:
           return state;

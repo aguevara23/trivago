@@ -1,11 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Favorites = () => {
+const Favorites = ({hotels}) => {
   return (
     <div>
-      Favorites
+      {Object.keys(hotels).map(id => {
+        const name = hotels[id].name;
+
+        return <div key={name}>{name}</div>
+      })}
     </div>
   )
 }
 
-export default Favorites;
+function mapStateToProps(state){
+  console.clear();
+  console.log(state);
+
+  return {
+    hotels: state.fav
+  }
+}
+
+export default connect(mapStateToProps)(Favorites);
