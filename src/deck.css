@@ -1,0 +1,14 @@
+.deck {
+  display: block;
+  position: relative;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+.deck .deck-card {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+
+  background-color: white;
+}
